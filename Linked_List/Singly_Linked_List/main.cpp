@@ -1,72 +1,56 @@
-#include "Singly_Linked_List.h"
 #include <iostream>
+#include "Singly_Linked_List.h"
 using namespace std;
 
 int main()
 {
     Node *head = NULL;
-    int size, data, position;
+    int size, position, data;
 
-    cout << "How many data you want to add at the front : ";
+    cout << "How many data you want to add at front ? : ";
     cin >> size;
-    cout << endl;
-    for (int i=0; i < size; i ++)
+
+    for (int i = 0; i < size; i ++)
     {
-        cout << "Enter  your " << i + 1 << " data : ";
-        cin >>  data;
-        cout << endl;
+        cout << "Enter your " << i+1 << " data : ";
+        cin >> data;
         head = Add_Front(head, data);
-    }
-    cout << "After adding these data the list will be : ";
+    } 
+    cout << "After adding data : ";
     Print_List(head);
-    cout << endl;
 
-    cout << "What you want to add at the last : ";
+    cout << "Enter the data you want to add at the end : ";
     cin >> data;
-    cout << endl;
     head = Add_End(head, data);
-    cout << "After adding at the last : ";
+    cout << "After adding at the end : ";
     Print_List(head);
-    cout << endl;
 
-    cout << "Where you want to add another data : (Position) : ";
+    cout << "Where you want to add another element: ";
     cin >> position;
-    cout << endl;
-    cout << "What you want to add : ";
+    cout << "What you want to add at " << position <<" : ";
     cin >> data;
-    cout << endl;
     head = Add_At_Position(head, position, data);
-    cout << "After adding this "<<data<< " on "<<position<<"position : ";
+    cout <<"After adding "<< data << " at " << position <<"th position : ";
     Print_List(head);
-    cout << endl;
 
-    cout << "After deleting the first data : ";
+    cout << "After deleting first element : ";
     head = Delete_Front(head);
     Print_List(head);
-    cout << endl;
 
-    cout << "After deleting the last data : ";
+    cout << "After deleting end element : ";
     head = Delete_End(head);
     Print_List(head);
-    cout << endl;
 
-    cout << "Which position's data you want tp delete (position (start from 1)) : ";
+    cout << "Which position you want to delete ? ";
     cin >> position;
-    cout << endl;
-    cout << "After deleting "<< position <<" position data : ";
     head = Delete_At_Position(head, position);
+    cout << "After deleting "<< position << "th position : ";
     Print_List(head);
-    cout << endl;
 
-    cout << "Which data you want to delete : ";
+    cout << "What data you want to delete ? ";
     cin >> data;
-    cout << endl;
     head = Delete_Data(head, data);
     cout << "After deleting "<< data << " : ";
     Print_List(head);
-    cout << endl;
-
-    cout << " Now the rest of the data after sorting (< < <) : ";
-    Print_List(head);
-    cout << "DONE XXX" << endl;
+    return 0;
 }
